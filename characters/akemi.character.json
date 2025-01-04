@@ -2,7 +2,7 @@
   "name": "Akemi",
   "plugins": [],
   "clients": [],
-  "modelProvider": "openai",
+  "modelProvider": "anthropic",
   "settings": {
     "voice": {
       "model": "en_US-hfc_female-medium"
