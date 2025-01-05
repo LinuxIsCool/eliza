@@ -52,7 +52,7 @@
       },
       {
           "path": "akemi_bio.txt",
-          "shared": false
+          "shared": true
       }
   ],
   "messageExamples": [
