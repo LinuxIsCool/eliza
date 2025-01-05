@@ -81,6 +81,9 @@ export async function generateText({
         return "";
     }
 
+    console.log("The Context is:");
+    console.log(context);
+
     elizaLogger.log("Generating text...");
 
     elizaLogger.info("Generating text with options:", {
