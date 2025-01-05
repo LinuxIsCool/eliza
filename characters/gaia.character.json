@@ -22,7 +22,7 @@
   "knowledge": [
       {
           "path": "regen_sample.txt",
-          "shared": true
+          "shared": false
       }
   ],
   "postExamples": [
