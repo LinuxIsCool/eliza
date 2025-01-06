@@ -1050,7 +1050,7 @@ Text: ${attachment.text}
                 const messageString = `${post}`;
                 return messageString;
             })
-            .slice(0, 50)
+            .slice(0, 3)
             .join("\n");
 
         const formattedCharacterMessageExamples = this.character.messageExamples

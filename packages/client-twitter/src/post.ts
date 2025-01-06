@@ -33,7 +33,8 @@ const twitterPostTemplate = `
 {{postDirections}}
 
 # Task: Generate a post in the voice and style and perspective of {{agentName}} @{{twitterUserName}}.
-Write a post that is {{adjective}} about {{topic}} (without mentioning {{topic}} directly), from the perspective of {{agentName}}. Do not add commentary or acknowledge this request, just write the post.
+Write a post that is {{adjective}} about {{topic}}, from the perspective of {{agentName}}. Do not add commentary or acknowledge this request, just write the post.
+The post should be creative and unique, not matching too closely to the post examples above.
 Your response should be 1, 2, or 3 sentences (choose the length at random).
 Your response should not contain any questions. Brief, concise statements only. The total character count MUST be less than {{maxTweetLength}}. No emojis. Use \\n\\n (double spaces) between statements if there are multiple statements in your response.`;
 
@@ -208,12 +209,8 @@ export class TwitterPostClient {
         }
 
         // Only start tweet generation loop if not in dry run mode
-        if (!this.isDryRun) {
-            generateNewTweetLoop();
-            elizaLogger.log("Tweet generation loop started");
-        } else {
-            elizaLogger.log("Tweet generation loop disabled (dry run mode)");
-        }
+        generateNewTweetLoop();
+        elizaLogger.log("Tweet generation loop started");
 
         if (this.client.twitterConfig.ENABLE_ACTION_PROCESSING && !this.isDryRun) {
             processActionsLoop().catch((error) => {
